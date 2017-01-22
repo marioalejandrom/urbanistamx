@@ -1,0 +1,85 @@
+<section class="col-xs-12">
+    <form role="search">
+        <h1>Search for Nearby Venues</h1>
+
+        <div class="form-group">
+            <label for="locationQuery">Select your location:</label>
+            <input type="text" class="form-control" name="locationQuery" id="locationQuery" placeholder="e.g. New York" ng-model="vm.exploreNearby">
+        </div>
+
+        <div class="form-group">
+            <label for="categoryQuery">Specify Category:</label>
+            <input type="text" class="form-control" name="categoryQuery" id="categoryQuery" placeholder="e.g. Burger" ng-model="vm.exploreQuery">
+        </div>
+        <div class="form-group">
+            <label for="distanceQuery">Choose search distance:</label>
+            <input type="range" id="distanceQuery" ng-model="vm.distanceQuery" min="1" max="10">
+        </div>
+        <p>Distance: {{vm.distanceQuery}} Km</p>
+
+        <input type="submit" class="btn btn-primary pull-right" ng-click="vm.doSearch()" value="Search">
+    </form>
+</section>
+
+<section ng-show="vm.totalRecordsCount > 0" class="col-xs-12">
+    <div>
+        <h1>Results for {{vm.exploreNearby}} within {{vm.distanceQuery}} Km</h1>
+        <form role="search">
+            <div class="form-group">
+                <label for="resultsFilter">Filter Places by:</label>
+                <input type="text" data-ng-model="filterValue" id="resultsFilter" name ="resultsFilter" class="form-control" placeholder="(Place Name) or (Category)">
+            </div>
+        </form>
+    </div>
+
+    <div data-ng-repeat="result in vm.filteredPlaces" class="col-xs-3">
+        <div class="well">
+            <div>
+                <div id="{{result.venue.id}}">
+                    <img ng-src="{{vm.buildCategoryIcon(result.venue.categories[0].icon, 44)}}"
+                         title="{{result.venue.categories[0].shortName}}" class="venueIcon">
+                </div>
+                <div>
+                    <a href="" ng-click="vm.showVenuePhotos(result.venue.id,result.venue.name)">
+                        <h2 class="venueName">{{result.venue.name}}</h2>
+                    </a>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <span class="badge">{{result.venue.rating | number: 1}}</span>
+                </div>
+                <div>
+                    <p class="text-warning"><small>{{(result.venue.location.address != null) && result.venue.location.address}} - {{result.venue.categories[0].shortName}}</small></p>
+                    <p>{{result.tips[0].text}}</p>
+                    <hr class="separator" />
+                    <a href="" data-ng-click="vm.bookmarkPlace(result.venue)"><span class="glyphicon glyphicon-bookmark"></span>Bookmark Place</a>
+                </div>
+                <div>
+                    <a href="" data-ng-click="vm.showVenuePhotos(result.venue.id,result.venue.name)">
+                        <img data-ng-src="{{vm.buildVenueThumbnail(result.venue.photos.groups[0])}}" class="img-thumbnail" /></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="ext-center">
+            <div ng-show="vm.totalRecordsCount > 0">
+                <div>
+                    <!--<div data-pagination="" data-previous-text="<" data-next-text=">" data-first-text="<<" data-last-text=">>"
+                         data-on-select-page="vm.pageChanged(page)" data-total-results="vm.totalRecordsCount" data-page="currentPage"
+                         data-boundary-links="true" class="pagination pagination-sm" data-max-size="5" data-rotate="false" data-results-per-page="10">
+                    </div>-->
+                    <pagination
+                            ng-model="currentPage"
+                            total-items="vm.totalRecordsCount"
+                            max-size="5"
+                            boundary-links="true">
+                    </pagination>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>

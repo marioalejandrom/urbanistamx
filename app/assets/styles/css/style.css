@@ -1,0 +1,5 @@
+nav.navbar .navbar-header + .collapse > .nav.navbar-nav {
+  padding-left: 15px; }
+
+.navbar-brand {
+  padding: 7px 15px; }

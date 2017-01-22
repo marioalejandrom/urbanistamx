@@ -1,0 +1,49 @@
+<section>
+    <header>
+        <h1>Create a new Event</h1>
+    </header>
+    {{vm.eventName}}
+    {{vm.eventDescription}}
+    {{vm.startDate}}
+    <form name="createEvent" class="form-horizontal">
+        <div class="form-group">
+            <label for="eventName" class="col-sm-2 text-right">Name:</label>
+            <div class="col-sm-10">
+                <input type="text" name="eventName" id="eventName" class="form-control" required="required" ng-model="vm.eventName">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="eventCategory" class="col-sm-2 text-right">Category:</label>
+            <div class="col-sm-10">
+                <select class="form-control" name="eventCategory" id="eventCategory" required="required">
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="eventDescription" class="col-sm-2 text-right">Description:</label>
+            <div class="col-sm-10">
+                <textarea class="form-control" rows="3" name="eventDescription" id="eventDescription" ng-model="vm.eventDescription"></textarea>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="eventTags" class="col-sm-2 text-right">Tags:</label>
+            <div class="col-sm-10">
+                <input type="tex" name="eventTags" id="eventTags" class="form-control">
+                <span id="eventTagsHelp" class="help-block">More than one tag can be added, separated by a comma (,)</span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="eventVenue" class="col-sm-2 text-right">Venue:</label>
+            <div class="col-sm-10">
+                <input type="text" name="eventVenue" id="eventVenue" class="form-control">
+            </div>
+        </div>
+
+        <dt-picker></dt-picker>
+
+    </form>
+</section>

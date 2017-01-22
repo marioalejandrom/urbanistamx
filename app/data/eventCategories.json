@@ -1,0 +1,13 @@
+{
+  "categories":  [
+    {
+      "name":"concert"
+    },
+    {
+      "name":"party"
+    },
+    {
+      "name":"movie"
+    }
+  ]
+}

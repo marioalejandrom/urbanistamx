@@ -1,0 +1,52 @@
+{
+  "venues":  [
+    {
+      "name":"El mejor evento del mundo",
+      "venue": "4bc5fd53bf29c9b6510bf92a",
+      "location": {
+        "latitude":"",
+        "longitude":""
+      },
+      "category": "Concert",
+      "description": "Best concert ever",
+      "poster": "/data/assets/images/the_killers_poster.jpg",
+      "event_date": {
+        "start_date": 1487095200,
+        "end_date": 1487066400
+      },
+      "posted_date": 1484110277
+    },
+    {
+      "name":"El segundo mejor evento del mundo",
+      "venue": "4bfc6104e9d8c9281978b2c7",
+      "location": {
+        "latitude":"",
+        "longitude":""
+      },
+      "category": "Party",
+      "description": "Second Best concert ever",
+      "poster": "/data/assets/images/black_keys_poster.jpg",
+      "event_date": {
+        "start_date": 1487095200,
+        "end_date": 1487066400
+      },
+      "posted_date": 1484110277
+    },
+    {
+      "name":"El tercer mejor evento del mundo",
+      "venue": "4c32340866e40f471520c68b",
+      "location": {
+        "latitude":"",
+        "longitude":""
+      },
+      "category": "Movie",
+      "description": "Third Best concert ever",
+      "poster": "/data/assets/images/japandroids_poster.jpg",
+      "event_date": {
+        "start_date": 1487095200,
+        "end_date": 1487066400
+      },
+      "posted_date": 1484110277
+    }
+  ]
+}
