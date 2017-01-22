@@ -29,7 +29,7 @@
         vm.startDate = '';
         vm.endDate = '' ;
 
-        vm.eventName = 'Test2';
+        vm.eventName = '';
 
         init();
 

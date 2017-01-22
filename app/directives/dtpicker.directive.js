@@ -12,9 +12,9 @@
             restrict: 'E',
             replace: true,
             templateUrl: 'templates/dtpicker.html',
-            //controller: 'dtPickerCtrl',
-            //controllerAs: 'dtPickerCtrl',
-            link: function (scope, element, attrs) {/* inline link function */
+            controller: 'dtPickerCtrl',
+            controllerAs: 'dtPickerCtrl',
+            link: function (scope, element, attrs, ngModelController) {/* inline link function */
                 element.datetimepicker();
 
                 element.on("dp.change", function (e) {
