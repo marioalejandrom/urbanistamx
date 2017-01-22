@@ -14,12 +14,17 @@
             templateUrl: 'templates/dtpicker.html',
             controller: 'dtPickerCtrl',
             controllerAs: 'dtPickerCtrl',
-            link: function (scope, element, attrs, ngModelController) {/* inline link function */
-                element.datetimepicker();
+            require: '?^eventsCtrl',
+            scope: {
+                startDate: '@',
+                endDate: '@'
+            },
+            link: function (scope, element, attrs) {/* inline link function */
+                /*element.datetimepicker();
 
                 element.on("dp.change", function (e) {
                     $('#datetimepickerEnd').data("DateTimePicker").minDate(e.date);
-                });
+                });*/
             }
         };
     }

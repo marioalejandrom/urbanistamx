@@ -1,21 +1,10 @@
 <div class="form-group">
     <label for="datetimepickerStart" class="col-sm-2 text-right">Start Date/Time:</label>
     <div class="col-sm-4">
-        <div class="input-group date" id="datetimepickerStart">
-            <input type='text' class="form-control" required="required" ng-model="startDate" placeholder="{{dtPickerCtrl.todayStartDate | date: 'MM/dd/yyyy h:mm a'}}">
-            <span class="input-group-addon">
-        <span class="glyphicon glyphicon-calendar"></span>
-    </span>
-        </div>
+        <dt-picker-start></dt-picker-start>
     </div>
-
     <label for="datetimepickerEnd" class="col-sm-2 text-right">End Date/Time:</label>
     <div class='col-sm-4'>
-        <div class="input-group date" id="datetimepickerEnd">
-            <input type='text' class="form-control" required="required" ng-model="endDate" placeholder="{{dtPickerCtrl.todayEndDate | date: 'MM/dd/yyyy h:mm a'}}">
-            <span class="input-group-addon">
-        <span class="glyphicon glyphicon-calendar"></span>
-    </span>
-        </div>
+        <dt-picker-end></dt-picker-end>
     </div>
 </div>

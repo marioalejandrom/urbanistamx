@@ -13,12 +13,8 @@
                 restrict: 'E',
                 replace: true,
                 transclude: true,
-                require: '^dtPicker',
                 templateUrl: 'templates/dtpickerStart.html',
-                scope: {
-                    ngModel: '=',
-                    placeHolder: '='
-                },
+                require: '^dtPicker',
                 link: function (scope, element, attrs, dtPickerCtrl) {/* inline link function */
                     element.datetimepicker();
 

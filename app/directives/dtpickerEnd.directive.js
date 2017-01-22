@@ -14,6 +14,7 @@
                 replace: true,
                 transclude: true,
                 templateUrl: 'templates/dtpickerEnd.html',
+                //require: 'ngModel',
                 require: '^dtPicker',
                 link: function (scope, element, attrs, dtPickerCtrl) {/* inline link function */
                     element.datetimepicker({
